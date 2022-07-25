@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 550px;
   height: auto;
   min-height: 500px;
   max-width: 500px;
@@ -57,12 +57,14 @@ body {
 
 button {
   padding: 0;
+  width: 70px;
   border: none;
   font-family: "Architects Daughter", cursive;
   text-decoration: none;
   padding-bottom: 3px;
   border-radius: 5px;
   background-color: #ffeaa7;
+  cursor: pointer;
 }
 button span {
   background: #f1f5f8;
