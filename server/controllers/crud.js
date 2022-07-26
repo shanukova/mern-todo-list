@@ -120,7 +120,7 @@ exports.deleteTodo = (req, res, next) => {
         return Todo.findByIdAndRemove(tid)
     })
     .then(result => {
-        result.status(200).json({ message: 'Todo deleted.' })
+        res.status(200).json({ message: 'Todo deleted.' })
     })
     .catch(err => {
         if(!err.statusCode) {

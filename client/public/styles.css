@@ -65,8 +65,26 @@ button {
   text-decoration: none;
   padding-bottom: 3px;
   border-radius: 5px;
-  background-color: #ffeaa7;
+  /* background-color: #ffeaa7; */
   cursor: pointer;
+}
+
+.buttons {
+  /* background-color: #ffeaa7; */
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.buttons:hover {
+  background-color: #ffeaa7;
+}
+
+.delete {
+  color: red;
+}
+
+.done {
+  color: green;
 }
 
 button span {
@@ -81,4 +99,9 @@ li {
   text-align: left;
   position: relative;
   padding: 0.5rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,14 +1,14 @@
 const Item = ({ item, removeItem, markItem }) => {
   return (
-    <div>
+    <div className='item'>
       <span
         style={{ textDecoration: item.status ? 'line-through' : 'none' }}
       >
         {item.name}
       </span>
       <div>
-        <button variant="outline-danger" onClick={() => removeItem(item.id)}>Delete</button>
-        <button variant="outline-primary" onClick={() => markItem(item.id)}>Done</button>
+        <button className='buttons delete' onClick={() => removeItem(item.id)}>Delete</button>
+        <button className='buttons done' onClick={() => markItem(item.id)}>{item.status ? 'Undone' : 'Done'}</button>
       </div>
     </div>
   )

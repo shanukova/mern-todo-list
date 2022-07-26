@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import AddItem from './components/AddItem'
 import Items from './components/Items'
 
@@ -70,11 +70,13 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <div className="heading">
+    <div className='container'>
+      <div className='heading'>
         <h1>To-Do List</h1>
       </div>
-      <AddItem addItem={addItem} />
+      <div className='form'>
+        <AddItem addItem={addItem} />
+      </div>
       {
         items.length > 0
         ? (<Items items={items} removeItem={removeItem} markItem={markItem} />)
