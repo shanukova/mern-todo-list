@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const crudRoutes = require('./routes/crud')
 const path = require('path')
+const port = process.env.PORT || 8080
 
 const app = express()
 const MONGODBURL = `mongodb+srv://${process.env.MDB_KEY}@cluster0.lm6p2.mongodb.net/?retryWrites=true&w=majority`
@@ -35,7 +36,7 @@ app.get("*", (req, res) => {
 
 mongoose.connect(MONGODBURL)
     .then(result => {
-        app.listen(8080)
+        app.listen(port)
     })
     .catch(error => {
         console.log(error)
