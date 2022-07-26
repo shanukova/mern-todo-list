@@ -7,8 +7,18 @@ const Item = ({ item, removeItem, markItem }) => {
         {item.name}
       </span>
       <div>
-        <button className='buttons delete' onClick={() => removeItem(item.id)}>Delete</button>
-        <button className='buttons done' onClick={() => markItem(item.id)}>{item.status ? 'Undone' : 'Done'}</button>
+        <button
+          className='buttons delete'
+          onClick={() => removeItem(item.id)}
+        >
+          Delete
+        </button>
+        <button
+          className='buttons done'
+          onClick={() => markItem(item.id)}
+        >
+          {item.status ? 'Undone' : 'Done'}
+        </button>
       </div>
     </div>
   )
