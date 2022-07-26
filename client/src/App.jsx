@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import AddItem from './components/AddItem'
 import Items from './components/Items'
 
