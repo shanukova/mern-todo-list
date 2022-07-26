@@ -48,7 +48,7 @@ const App = () => {
   }
 
   const markItem = async (id) => {
-    const itemToToggle = await fetchItem(id);
+    const itemToToggle = await fetchItem(id)
     const updatedItem = { status: !itemToToggle.status }
 
     const res = await fetch(`http://localhost:8080/put/${id}`, {
