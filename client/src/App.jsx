@@ -14,19 +14,19 @@ const App = () => {
   }, [])
 
   const fetchItems = async () => {
-    const res = await fetch('/get')
+    const res = await fetch('/api/todos')
     const data = await res.json()
     return data.todos
   }
 
   const fetchItem = async (id) => {
-    const res = await fetch(`/get/${id}`)
+    const res = await fetch(`/api/todos/${id}`)
     const data = await res.json()
     return data.todo
   }
 
   const addItem = async (item) => {
-    const res = await fetch('/post', {
+    const res = await fetch('/api/todos', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -38,7 +38,7 @@ const App = () => {
   }
 
   const removeItem = async (id) => {
-    const res = await fetch(`/delete/${id}`, {
+    const res = await fetch(`/api/todos/${id}`, {
       method: 'DELETE',
     })
 
@@ -51,7 +51,7 @@ const App = () => {
     const itemToToggle = await fetchItem(id)
     const updatedItem = { status: !itemToToggle.status }
 
-    const res = await fetch(`/put/${id}`, {
+    const res = await fetch(`/api/todos/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',

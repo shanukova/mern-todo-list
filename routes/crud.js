@@ -3,11 +3,11 @@ const { body } = require('express-validator')
 const crudController = require('../controllers/crud')
 const router = express.Router()
 
-router.get('/get', crudController.getTodos)
+router.get('/api/todos', crudController.getTodos)
 
-router.get('/get/:tid', crudController.getTodo)
+router.get('/api/todos/:tid', crudController.getTodo)
 
-router.post('/post', [
+router.post('/api/todos', [
     body('name',"Provide a valid name")
         .isLength({ min: 2})
         .trim(),
@@ -15,11 +15,11 @@ router.post('/post', [
         .isBoolean()
 ], crudController.postTodo)
 
-router.put('/put/:tid', [
+router.put('/api/todos/:tid', [
     body('status', "Provide a valid status")
         .isBoolean()
 ], crudController.putTodo)
 
-router.delete('/delete/:tid', crudController.deleteTodo)
+router.delete('/api/todos/:tid', crudController.deleteTodo)
 
 module.exports = router
