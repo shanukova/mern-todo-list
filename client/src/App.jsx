@@ -14,19 +14,19 @@ const App = () => {
   }, [])
 
   const fetchItems = async () => {
-    const res = await fetch('http://localhost:8080/get')
+    const res = await fetch('/get')
     const data = await res.json()
     return data.todos
   }
 
   const fetchItem = async (id) => {
-    const res = await fetch(`http://localhost:8080/get/${id}`)
+    const res = await fetch(`/get/${id}`)
     const data = await res.json()
     return data.todo
   }
 
   const addItem = async (item) => {
-    const res = await fetch('http://localhost:8080/post', {
+    const res = await fetch('/post', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -38,7 +38,7 @@ const App = () => {
   }
 
   const removeItem = async (id) => {
-    const res = await fetch(`http://localhost:8080/delete/${id}`, {
+    const res = await fetch(`/delete/${id}`, {
       method: 'DELETE',
     })
 
@@ -51,7 +51,7 @@ const App = () => {
     const itemToToggle = await fetchItem(id)
     const updatedItem = { status: !itemToToggle.status }
 
-    const res = await fetch(`http://localhost:8080/put/${id}`, {
+    const res = await fetch(`/put/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
